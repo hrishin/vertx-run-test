@@ -2,7 +2,6 @@ package io.openshift.booster;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
-import io.vertx.core.http.HttpServer;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.healthchecks.HealthCheckHandler;
 import io.vertx.ext.healthchecks.Status;
@@ -30,6 +29,7 @@ public class HttpApplication extends AbstractVerticle {
     router.get("/api/health/readiness").handler(rc -> rc.response().end("OK"));
     router.get("/api/health/liveness").handler(healthCheckHandler);
     router.get("/").handler(StaticHandler.create());
+    router.get("/prtest").handler(rc -> rc.response().end("PR"));
 
     vertx
       .createHttpServer()
@@ -64,4 +64,6 @@ public class HttpApplication extends AbstractVerticle {
         .putHeader(CONTENT_TYPE, "application/json; charset=utf-8")
         .end(response.encodePrettily());
   }
+  
+  
 }
