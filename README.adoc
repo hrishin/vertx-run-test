@@ -7,6 +7,8 @@ IMPORTANT: This booster requires Java 8 JDK or greater and Maven 3.3.x or greate
 
 IMPORTANT: As part of the process of creating this booster, launch.openshift.io set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in your Single-node OpenShift Cluster or OpenShift Online Web Console. 
 
+One more PR test 
+
 == Running the Booster Locally
 To run this booster on your local host:
 
